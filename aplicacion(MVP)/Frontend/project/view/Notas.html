@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Notas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Gestión de Notas</h2>
+        
+        <!-- Formulario para Crear/Editar Nota -->
+        <form id="crudForm">
+            <input type="hidden" id="id" name="id">
+            <div class="mb-3">
+                <label for="corte_1" class="form-label">Corte 1</label>
+                <input type="number" class="form-control" id="corte_1" name="corte_1" required>
+            </div>
+            <div class="mb-3">
+                <label for="corte_2" class="form-label">Corte 2</label>
+                <input type="number" class="form-control" id="corte_2" name="corte_2" required>
+            </div>
+            <div class="mb-3">
+                <label for="corte_3" class="form-label">Corte 3</label>
+                <input type="number" class="form-control" id="corte_3" name="corte_3" required>
+            </div>
+            <div class="mb-3">
+                <label for="materia_id" class="form-label">ID Materia</label>
+                <input type="number" class="form-control" id="materia_id" name="materia_id" required>
+            </div>
+            <div class="mb-3">
+                <label for="usuario_id" class="form-label">ID Usuario</label>
+                <input type="number" class="form-control" id="usuario_id" name="usuario_id" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="createOrUpdate()">Guardar</button>
+            <button type="button" class="btn btn-secondary" onclick="resetForm()">Limpiar</button>
+        </form>
+
+        <!-- Tabla para mostrar las Notas -->
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Corte 1</th>
+                    <th>Corte 2</th>
+                    <th>Corte 3</th>
+                    <th>ID Materia</th>
+                    <th>ID Usuario</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="dataBody">
+                <!-- Se cargará con los datos de la API -->
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="C:\Users\Asus\Front_planilla\project\js\Notas.js"></script>
+</body>
+</html>

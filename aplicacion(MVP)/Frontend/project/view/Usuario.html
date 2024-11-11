@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Gestión de Usuarios</h2>
+        
+        <!-- Formulario para Crear/Editar Usuario -->
+        <form id="crudForm">
+            <input type="hidden" id="id" name="id">
+            <div class="mb-3">
+                <label for="username" class="form-label">Nombre de Usuario</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="rol_id" class="form-label">ID del Rol</label>
+                <input type="number" class="form-control" id="rol_id" name="rol_id" required>
+            </div>
+            <div class="mb-3">
+                <label for="persona_id" class="form-label">ID de Persona</label>
+                <input type="number" class="form-control" id="persona_id" name="persona_id" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="createOrUpdate()">Guardar</button>
+            <button type="button" class="btn btn-secondary" onclick="resetForm()">Limpiar</button>
+        </form>
+
+        <!-- Tabla para mostrar los Usuarios -->
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de Usuario</th>
+                    <th>ID del Rol</th>
+                    <th>ID de Persona</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="dataBody">
+                <!-- Se cargará con los datos de la API -->
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="C:\Users\Asus\Front_planilla\project\js\Usuario.js"></script>
+    
+</body>
+</html>
