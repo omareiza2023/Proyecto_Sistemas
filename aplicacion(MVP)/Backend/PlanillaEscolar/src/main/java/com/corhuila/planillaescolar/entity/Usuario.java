@@ -31,6 +31,18 @@ public class Usuario {
     @JoinColumn(name = "persona_id", nullable = false, unique = true)
     private Persona personaId;
 
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "curso_id", nullable = false)
+    private Curso curso;
+
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
 
     public Persona getPersonaId() {
         return personaId;

@@ -44,6 +44,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
             usuarioActual.setPassword(usuario.getPassword());
             usuarioActual.setRol(usuario.getRol());
             usuarioActual.setPersonaId(usuario.getPersonaId());
+            usuarioActual.setCurso(usuario.getCurso());
             return usuarioRepository.save(usuarioActual);
         } else {
             throw new RuntimeException("Usuario no encontrado con el id " + id);

@@ -9,6 +9,7 @@ function createOrUpdate() {
     const password = $('#password').val();
     const rol = $('#rol_id').val();
     const personaId = $('#persona_id').val();
+    const curso = $('#curso_id').val();
 
     const data = {
         username,
@@ -18,6 +19,9 @@ function createOrUpdate() {
         },
         personaId: {
             id: parseInt(personaId) 
+        },
+        curso: {
+            id: parseInt(curso) 
         }
     };
 
@@ -70,6 +74,7 @@ function loadData() {
                         <td>${usuario.username}</td>
                         <td>${usuario.rol.id}</td>
                         <td>${usuario.personaId.id}</td>
+                        <td>${usuario.curso.id}</td>
                         <td>
                             <button class="btn btn-warning btn-sm" onclick="editUsuario(${usuario.id})">Editar</button>
                             <button class="btn btn-danger btn-sm" onclick="deleteUsuario(${usuario.id})">Eliminar</button>
@@ -96,6 +101,7 @@ function editUsuario(id) {
             $('#password').val(usuario.password);
             $('#rol_id').val(usuario.rol);
             $('#persona_id').val(usuario.personaId);
+            $('#curso_id').val(usuario.curso);
         },
         error: function(error) {
             alert('Error al obtener los datos del usuario');

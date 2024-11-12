@@ -16,8 +16,12 @@ function createOrUpdate() {
         corte1,
         corte2,
         corte3,
-        materia,
-        usuario
+        materia: {
+            id: parseInt(materia) 
+        },
+        usuario: {
+            id: parseInt(usuario) 
+        },
     };
 
     if (id) {
@@ -69,8 +73,8 @@ function loadData() {
                         <td>${nota.corte1}</td>
                         <td>${nota.corte2}</td>
                         <td>${nota.corte3}</td>
-                        <td>${nota.materia}</td>
-                        <td>${nota.usuario}</td>
+                        <td>${nota.materia.id}</td>
+                        <td>${nota.usuario.id}</td>
                         <td>
                             <button class="btn btn-warning btn-sm" onclick="editNota(${nota.id})">Editar</button>
                             <button class="btn btn-danger btn-sm" onclick="deleteNota(${nota.id})">Eliminar</button>

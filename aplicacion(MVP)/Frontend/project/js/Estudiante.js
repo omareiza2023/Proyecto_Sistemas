@@ -27,6 +27,7 @@ function loadMateriasAndNotas(userId) {
         url: apiGetNotasUrl,
         type: 'GET',
         success: function(notas) {
+            
             let tableContent = '';
             notas.forEach(nota => {
                 if (nota.usuario_id === userId) {

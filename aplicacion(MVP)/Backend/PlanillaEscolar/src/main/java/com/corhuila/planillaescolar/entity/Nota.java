@@ -26,11 +26,11 @@ public class Nota {
     private  Double corte3;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "materia_id", nullable = false)
+    @JoinColumn(name = "materia_id", nullable = false, unique = true)
     private Materia materia;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "usuario_id", nullable = false, unique = true)
+    @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
     public Long getId() {

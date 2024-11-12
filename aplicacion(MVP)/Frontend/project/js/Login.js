@@ -19,11 +19,11 @@ function login() {
                     
                     // Redireccionar según el rol del usuario
                     if (usuario.rol.rolName === "Estudiante") {
-                        window.location.href = 'file:///C:/Users/Asus/Front_planilla/project/view/Estudiante.html';//estudiante
+                        window.location.href = '../view/Estudiante.html';//estudiante
                     } else if (usuario.rol.rolName === "Profesor") {
-                        window.location.href = 'file:///C:/Users/Asus/Front_planilla/project/view/Profesor.html';// profe
+                        window.location.href = '../view/Profesor.html';// profe
                     } else if (usuario.rol.rolName === "Administrador") {
-                        window.location.href = 'file:///C:/Users/Asus/Front_planilla/project/view/administrador.html'; //admin
+                        window.location.href = '../view/administrador.html'; //admin
                     } else {
                         alert('Rol de usuario no reconocido');
                     }
