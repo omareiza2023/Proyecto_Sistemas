@@ -1,0 +1,38 @@
+@startuml paquetes
+
+package "Sistema de Planilla Académica" {
+    package "Módulo de Autenticación" {
+        [Autenticación]
+        [Usuario]
+        [Persona]
+    }
+
+    package "Módulo de Gestión" {
+        package "Gestión de Usuarios" {
+            [GestionUsuarios]
+        }
+        
+        package "Gestión de Cursos" {
+            [GestionCursos]
+        }
+        
+        package "Gestión de Materias" {
+            [GestionMaterias]
+        }
+
+        package "Gestión de Notas" {
+            [GestionNotas]
+        }
+
+        package "Gestión de Asistencia" {
+            [GestionAsistencia]
+        }
+    }
+
+    package "Base de Datos" {
+        [BDAutenticación]
+        [BDConsultas]
+    }
+}
+
+@enduml

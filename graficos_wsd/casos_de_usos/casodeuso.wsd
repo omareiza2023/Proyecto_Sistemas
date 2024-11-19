@@ -1,0 +1,47 @@
+@startuml
+left to right direction
+
+actor Persona as persona
+actor Profesor as profesor
+actor Estudiante as estudiante
+actor Director as director
+persona <|-- profesor
+persona <|-- estudiante
+persona <|-- director
+
+database "Base de Datos" as BD
+
+rectangle "Planilla Escolar" {
+
+    usecase "Iniciar sesión" as iniciarSesion
+    usecase "Registrar usuario" as registrarUsuario
+    usecase "Asignar contraseña" as asignarContraseña
+    usecase "Actualizar contraseña" as actualizarContraseña
+    usecase "Ver notas" as verNotas
+    usecase "Gestionar cursos" as gestionarCursos
+    usecase "Gestionar materias" as gestionarMaterias
+    usecase "Gestionar notas" as gestionarNotas
+    usecase "Asistencia" as asistencia
+    usecase "Guardar" as guardar
+    usecase "Panilla escolar" as panillaEscolar
+
+    iniciarSesion -down-> asignarContraseña : <<include>>
+    iniciarSesion -down-> registrarUsuario : <<include>>
+    iniciarSesion -up-> actualizarContraseña : <<extend>>
+    iniciarSesion -right-> panillaEscolar : <<include>>
+    
+    panillaEscolar -right-> gestionarNotas : <<include>>
+    panillaEscolar -down-> gestionarCursos : <<include>>
+    panillaEscolar -down-> gestionarMaterias : <<include>>
+    panillaEscolar -down-> verNotas : <<extend>>
+    gestionarCursos -down-> asistencia : <<include>>
+    gestionarMaterias -right-> guardar : <<include>>
+    
+    profesor -right-> iniciarSesion
+    estudiante -right-> iniciarSesion
+    director -right-> iniciarSesion
+    
+    BD --|> iniciarSesion
+}
+
+@enduml

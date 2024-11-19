@@ -1,0 +1,51 @@
+@startuml
+
+class Persona extends Usuario {
+    - id : Long
+    - name_persona : String
+    - mail_persona : String
+    - num_persona : Long
+    - direccion : String
+}
+
+class Rol extends Usuario {
+    - id : Long
+    - rol_name : String
+    - description : String
+}
+
+class Usuario {
+    - id : Long
+    - username : String
+    - password : String
+    - persona : Persona
+    - rol: Rol
+}
+
+class Curso {
+    - id : Long
+    - nombre_curso : String
+    - descripcion : String
+    - materia: Materia
+}
+
+class Materia {
+    - id : Long
+    - name_materia : String
+    - description : String
+    - notas: Notas
+}
+
+class Nota {
+    - id : Long
+    - corte_1 : Double
+    - corte_2 : Double
+    - corte_3 : Double
+}
+
+Usuario --> Nota
+Curso --> Materia
+Materia --> Nota
+
+
+@enduml

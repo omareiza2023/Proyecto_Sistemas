@@ -1,0 +1,33 @@
+@startuml actividad
+
+start
+
+:Inicio de sesión;
+if (¿Usuario autenticado?) then (Sí)
+    :Mostrar pantalla de inicio;
+else (No)
+    :Mostrar mensaje de error;
+    stop
+endif
+
+:Acceso al sistema;
+if (Rol del usuario) then
+    ->Estudiante;
+    :Consultar notas y asistencia;
+    :Acceder a planilla de notas;
+else
+    if (Rol del usuario) then
+        ->Profesor;
+        :Registrar calificaciones;
+        :Registrar asistencia;
+    else
+        ->Administrador;
+        :Gestión completa de datos;
+        :Acceso a todos los registros en DBAdmin;
+    endif
+endif
+
+:Desconexión del sistema;
+stop
+
+@enduml
